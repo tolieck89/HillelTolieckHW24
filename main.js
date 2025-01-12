@@ -5,7 +5,7 @@
  Функція повинна приймати масив чисел та повертати їх суму.
 */
 
-console.log("First task. Reduce method");
+console.log("First task. Reduce method:");
 
 function sumArray(numbers) {
    return numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -24,7 +24,7 @@ console.log('Сума елементів масиву:', sum); // Виведен
  * Розробити функцію, яка використовує метод map масиву для створення нового масиву, в якому кожен елемент буде вдвічі більшим за елементи вхідного масиву чисел.
 */
 
-console.log("Second task. Map method");
+console.log("Second task. Map method:");
 
 function doubleArrayElements(numbers) {
   return  numbers.map(number => number * 2);
@@ -35,6 +35,7 @@ const exampleArray2 = [1, 2, 3, 4, 5];
 const doubledArray = doubleArrayElements(exampleArray2);
 console.log('Подвоєні елементи масиву:', doubledArray); // Виведення подвоєних елементів
 
+console.log("Third task.Skill manager:");
 
 /*
  * #3
@@ -56,16 +57,35 @@ console.log('Подвоєні елементи масиву:', doubledArray); //
  * - Код має бути написаний з урахуванням принципів чистого коду, забезпечуючи читабельність та легкість підтримки.
 */
 
-// class SkillsManager {
-//   // code here
-// }
+class SkillsManager {
+  constructor(){
+     this.skills = [];
+   
+  }
 
-// const skillsManager = new SkillsManager()
-//
-// console.log(skillsManager.addSkill('JavaScript'))
-// console.log(skillsManager.addSkill('CSS'))
-// console.log(skillsManager.getAllSkills())
+   addSkill(skill) {
+    if (typeof skill === 'string' && skill.length>1) {
+      this.skills.push(skill);
+      return skill;
+    } else {
+      return null;
+    }
+}
 
+   getAllSkills(){
+    return this.skills;
+  }
+
+}
+
+const skillsManager = new SkillsManager();
+
+console.log(skillsManager.addSkill('JavaScript'));
+console.log(skillsManager.addSkill('CSS'));
+console.log(skillsManager.getAllSkills());
+
+
+console.log("Fourth  task. Date calculator:");
 
 /*
  * #4
