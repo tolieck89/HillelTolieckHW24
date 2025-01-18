@@ -101,26 +101,37 @@ console.log("Fourth  task. Date calculator:");
  * Об'єкти DateCalculator мають створюватися за допомогою ключового слова new і використання функції-конструктора.
  */
 
-// function DateCalculator(initialDate) {
-//   this.addDays = function(days) {
-//     // code here
-//   }
+class DateCalculator {
 
-//   this.subtractDays = function(days) {
-//     // code here
-//   }
+constructor(initialDate){
+  this.date = new Date(initialDate);
 
-//   this.getResult = function() {
-//     // code here
-//   }
-// }
+}
+
+
+  addDays(days) {
+    this.date.setDate(this.date.getDate() + days);
+  }
+
+ subtractDays(days) {
+    this.date.setDate(this.date.getDate() - days);
+  }
+
+  getResult() {
+    const day = String(this.date.getDate()).padStart(2, '0');
+    const month = String(this.date.getMonth() + 1).padStart(2, '0');
+    const year = this.date.getFullYear();
+    
+    return `${year}-${month}-${day}`;
+  }
+}
 
 // Демонстрація використання
-// const dateCalculator = new DateCalculator('2023-01-01')
-// dateCalculator.addDays(5)
-// console.log(dateCalculator.getResult()) // Виводить нову дату після додавання днів
-//
-// dateCalculator.subtractDays(3)
-// console.log(dateCalculator.getResult()) // Виводить нову дату після віднімання днів
+const dateCalculator = new DateCalculator('2023-01-01')
+dateCalculator.addDays(5)
+console.log(dateCalculator.getResult()) // Виводить нову дату після додавання днів
+
+dateCalculator.subtractDays(3)
+console.log(dateCalculator.getResult()) // Виводить нову дату після віднімання днів
 
 // export { doubleArrayElements, sumArray, SkillsManager, DateCalculator }
